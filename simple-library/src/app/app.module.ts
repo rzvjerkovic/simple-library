@@ -17,41 +17,47 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BooksListViewComponent } from './books-list-view/books-list-view.component';
 import { ReservedBooksComponent } from './reserved-books/reserved-books.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-  {
-    path: 'dashboard',
-    component: DashboardComponent
-  },
-  {
-    path: 'books',
-    component: BooksListViewComponent
-  },
-  {
-    path: 'my-books',
-    component: ReservedBooksComponent
-  }
+    { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+    {
+        path: 'dashboard',
+        component: DashboardComponent
+    },
+    {
+        path: 'books',
+        component: BooksListViewComponent
+    },
+    {
+        path: 'my-books',
+        component: ReservedBooksComponent
+    },
+    {
+        path: 'login',
+        component: LoginComponent
+    }
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BooksListViewComponent,
-    DashboardComponent,
-    ReservedBooksComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    InMemoryWebApiModule.forRoot(BookData, { delay: 200 }),
-    RouterModule.forRoot(routes),
-    // PrimeNG modules
-    InputTextModule,
-    PaginatorModule,
-    TableModule
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        BooksListViewComponent,
+        DashboardComponent,
+        ReservedBooksComponent,
+        LoginComponent
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        InMemoryWebApiModule.forRoot(BookData, { delay: 200 }),
+        RouterModule.forRoot(routes),
+        // PrimeNG modules
+        InputTextModule,
+        PaginatorModule,
+        TableModule
+    ],
+    bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
