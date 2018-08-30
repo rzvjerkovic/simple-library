@@ -1,0 +1,10 @@
+.main .header {
+  background-color: #1f9bde;
+  padding: 10px 15px;
+}
+
+.main .header h1 {
+  margin: 0;
+  line-height: 40px;
+  color: #fff;
+}

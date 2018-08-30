@@ -1,0 +1,30 @@
+<ng-container *ngIf="booksPage">
+  <p-table [value]="booksPage.content">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Author</th>
+        <th>Title</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body"
+                 let-book>
+      <tr>
+        <td>{{book.author}}</td>
+        <td>{{book.title}}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <p-paginator [rows]="paginatorProperties.size"
+               [totalRecords]="booksPage.totalElements"
+               [rowsPerPageOptions]="[5,10,20]"
+               (onPageChange)="paginate($event)"
+               [templateLeft]="paginatorLeft">
+  </p-paginator>
+  <ng-template #paginatorLeft>
+    <span>Find a book: </span>
+    <input type="text"
+           pInputText
+           [(ngModel)]="paginatorProperties.search"
+           (keyup)="getBooksPage()" />
+  </ng-template>
+</ng-container>

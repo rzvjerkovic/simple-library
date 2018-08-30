@@ -1,0 +1,29 @@
+.dashboard-content {
+  margin-top: 60px;
+}
+
+.dashboard-content .dashboard-item {
+  position: relative;
+  margin-top: 40px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+.dashboard-content .dashboard-item:before {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  left: -10px;
+  top: -10px;
+  z-index: -1;
+  border-radius: 10px;
+  background-color: #1f9bde;
+  content: '';
+}
+
+.dashboard-content .dashboard-item i {
+  font-size: 100px;
+}
