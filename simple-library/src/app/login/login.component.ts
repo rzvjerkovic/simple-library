@@ -17,6 +17,10 @@ export class LoginComponent implements OnInit {
     submit() {
         if (this.userService.checkPassword('mferenca', 'pass')) {
             this.router.navigateByUrl('dashboard');
+            /*  Tu triba dohvatit usera iz users mock (napravi za users mock isto sta si za books)
+            *   I onda njega spremis umisto ovo hardkodirano sranje
+            */
+            this.userService.setUser({ username: 'mferenca', id: 1 });
         } else {
             console.error('Wrong username and/or password');
         }
